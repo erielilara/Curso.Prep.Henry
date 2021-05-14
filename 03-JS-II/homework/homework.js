@@ -102,9 +102,9 @@ function esEntero(numero) {
   // De lo contrario, devuelve "false"
   // Pista: Puedes resolver esto usando `Math.floor`
   // Tu código:
-  if (Number.isInteger (numero)) {
-    return true;
-  } else
+  console.log ('numero', numero); 
+  console.log ('math', Math.floor(numero));
+  if (numero === Math.floor(numero)) return true;
   return false;
 }
 
@@ -119,7 +119,7 @@ function fizzBuzz(numero) {
     return 'fizz';
   } else if (numero % 5 === 0) {
     return 'buzz';
-  } else 
+  } 
   return numero;
 }
 

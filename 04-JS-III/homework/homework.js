@@ -26,11 +26,10 @@ function incrementarPorUno(array) {
   // Aumenta cada entero por 1
   // y devuelve el array
   // Tu código:
-  var Nuevoarray = [];
-  for (var i=0; i < array.length; i++) {
-    Nuevoarray [i] = array [i] + 1; 
+    for (var i=0; i < array.length; i++) {
+    array[i] = array [i] + 1; 
   }
-  return Nuevoarray;
+  return array;
 }
 
 
@@ -38,7 +37,7 @@ function agregarItemAlFinalDelArray(array, elemento) {
   // Añade el "elemento" al final del array
   // y devuelve el array
   // Tu código:
-  array[array.length] = elemento;
+  array.push(elemento);
    return array;    
 } 
 
@@ -66,10 +65,11 @@ function arrayContiene(array, elemento) {
   // Comprueba si el elemento existe dentro de "array"
   // Devuelve "true" si está, o "false" si no está
   // Tu código:
-  if (array.includes(elemento)){
-    return true;
-  }else
-  return false;
+  for (var i=0; i<array.length;i++){
+  if (array[i] === elemento)  
+     return true;
+    } 
+    return false;
 }
 
 
@@ -77,10 +77,11 @@ function agregarNumeros(numeros) {
   // "numeros" debe ser un arreglo de enteros (int/integers)
   // Suma todos los enteros y devuelve el valor
   // Tu código:
-  var total = 0;
+  var sumatoria=0;
   for (var i=0; i < numeros.length; i++){
-   total = total + numeros [i];
-  } return total; 
+  sumatoria= sumatoria + numeros [i] ;
+  } 
+  return sumatoria;
 }
 
 
@@ -91,7 +92,8 @@ function promedioResultadosTest(resultadosTest) {
   var total = 0;
   for (var i=0; i < resultadosTest.length; i++) {
    total = total + resultadosTest [i];
-  } return total / resultadosTest.length
+  } 
+  return total / resultadosTest.length
 }
 
 
@@ -112,7 +114,8 @@ function multiplicarArgumentos() {
   // Usa la palabra clave `arguments` para multiplicar todos los argumentos y devolver el producto
   // Si no se pasan argumentos devuelve 0. Si se pasa un argumento, simplemente devuélvelo
   // Escribe tu código aquí:
-  if (arguments.length < 1) return 0;
+  if (arguments.length === 0) return 0;
+  if (arguments.length === 1) return arguments[0];
   var total = 1;
   for (var i = 0; i < arguments.length; i++) {
     total = total * arguments[i];
@@ -125,11 +128,11 @@ function cuentoElementos(arreglo){
   //Escribe tu código aquí
   var total = 0;
   for (var i=0; i <arreglo.length; i++){
-    if (arreglo[i]>19) {
-      total++;
+    if (arreglo[i]>18) {
+      total = total + 1;
     }
   } return total;
-  }
+}
 
 
 
@@ -149,10 +152,9 @@ function empiezaConNueve(n) {
   //Desarrolle una función que recibe como parámetro un número entero n. Debe retornar true si el entero 
   //inicia con 9 y false en otro caso.
   //Escribe tu código aquí
-  var numero = n.toString ();
-    if (numero.charAt(0) === '9') {
-     return true;
-   } return false;
+  n=n+'';
+  if (n[0] === '9') return true;
+  return false;
 }
 
 
@@ -160,12 +162,12 @@ function todosIguales(arreglo) {
   //Escriba la función todosIguales, que indique si todos los elementos de un arreglo son iguales:
   //retornar true, caso contrario retornar false.
   //Escribe tu código aquí  
-  
+  var element = arreglo[0];
   for (var i = 0; i < arreglo.length; i++) {
-    if (arreglo[i + 1] === arreglo [i]) {
-      return true;
+    if (arreglo[i] !== element) {
+      return false;
     }
-  } return false;
+  } return true;
 } 
 
 
@@ -208,21 +210,19 @@ function breakStatement(numero) {
   //devolver: "Se interrumpió la ejecución"
   //Pista: usá el statement 'break'
   // Tu código:
-  var Array =[];
-  var total=numero; 
+  var Array =[]; 
      for (var i=0; i<10; i++) {
-    if (total==i)   break;
-     else {
-       total=total+2;
-       Array.push(total);
-     }
-  } 
-     if (i<10) {
-       return 'Se interrumpió la ejecución';
-     } else 
-     return Array; 
-}
+    numero = numero + 2;
+      if (numero !== i) {
+        Array.push(numero);
+      } else {
+        Array = 'Se interrumpió la ejecución'; 
+        break;
+      }
+    }
+      return Array;
 
+}
 
 function continueStatement(numero) {
   //Iterar en un bucle aumentando en 2 el numero recibido hasta un límite de 10 veces.
@@ -232,14 +232,12 @@ function continueStatement(numero) {
   //Pista: usá el statement 'continue'
   // Tu código:
   var Array=[];
-  var total=numero;
   for (var i=0; i<10; i++) { 
     if (i===5) continue; 
-    else {
-      total= total+2;
-      Array.push (total);
-    }
-  } return Array;
+   
+      numero= numero+2;
+      Array.push (numero);
+    } return Array;
 }
 
 
