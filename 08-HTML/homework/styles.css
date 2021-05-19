@@ -1,0 +1,31 @@
+body { background-image: url("https://s1.1zoom.me/big0/452/326532-Sepik.jpg");
+}
+
+h1 {
+    text-align: center;
+    flex-direction: row;
+    color: yellow;
+}
+div {
+    display: relative;
+    justify-content: center;
+    flex-direction: row;
+}
+
+img {
+    
+    width: 400px;
+}
+#ThirdDiv { 
+    justify-content: center;
+    flex-direction: row;
+    height: 600px;
+    width: 500px;
+    background: darkred;
+    padding: 50px;
+    border: 20px double goldenrod;
+}
+#SpanId{
+    font-size: 18px;
+    margin: 50px;
+}
